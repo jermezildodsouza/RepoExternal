@@ -1,7 +1,6 @@
-FROM launcher.gcr.io/google/nodejs
-LABEL "author"="john"
-COPY package*.json /app/
+FROM node
 WORKDIR /app
+COPY . /app
 RUN npm install
-COPY . /app/
-CMD ["node", "server.js"]
+EXPOSE 8083
+CMD [ "node", "server.js" ]
